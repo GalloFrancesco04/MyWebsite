@@ -1,96 +1,287 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Il Mio Sito Personale - Tema Scuro</title>
-  <!-- Google Fonts per uno stile moderno -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <!-- Icone social da Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="description" content="Professional personal site of Francesco Gallo. Developer, Designer, and Digital Innovator." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Francesco's Site</title>
+  <!-- Favicon with emoji -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.9em' font-size='90'%3E👾%3C/text%3E%3C/svg%3E">
+  <!-- Google Fonts for modern typography -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+  <!-- Font Awesome for social icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
   <style>
-    :root {
-      --primary-bg: #121212;
-      --secondary-bg: #1e1e1e;
-      --text-color: #e0e0e0;
-      --accent-color: #03a9f4;
-    }
+    /* CSS Reset */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
+    html {
+      scroll-behavior: smooth;
+    }
     body {
-      background-color: var(--primary-bg);
-      color: var(--text-color);
       font-family: 'Roboto', sans-serif;
-      line-height: 1.6;
-      padding: 20px;
+      background-color: #121212;
+      color: #e0e0e0;
+      overflow-x: hidden;
     }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    ul {
+      list-style: none;
+    }
+
+    /* Root Variables */
+    :root {
+      --primary-bg: #121212;
+      --secondary-bg: #1e1e1e;
+      --accent-color: #03a9f4;
+      --header-height: 70px;
+      --transition-speed: 0.3s;
+    }
+
+    /* Header & Navigation */
     header {
-      background-color: var(--secondary-bg);
-      padding: 1.5rem;
-      text-align: center;
-      margin-bottom: 2rem;
-      border-radius: 8px;
+      background: var(--secondary-bg);
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: var(--header-height);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2rem;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+      z-index: 1000;
     }
-    header h1 {
-      font-size: 2.5rem;
+    .logo {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.8rem;
       font-weight: 700;
+      color: var(--accent-color);
     }
-    .container {
-      max-width: 800px;
+    nav {
+      display: flex;
+      align-items: center;
+    }
+    .nav-links {
+      display: flex;
+    }
+    .nav-links li {
+      margin-left: 2rem;
+    }
+    .nav-links a {
+      font-size: 1rem;
+      transition: color var(--transition-speed);
+    }
+    .nav-links a:hover {
+      color: var(--accent-color);
+    }
+    /* Hamburger Menu (Mobile) */
+    .hamburger {
+      display: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--accent-color);
+    }
+
+    /* Hero Section */
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background: linear-gradient(135deg, #1e1e1e, #121212);
+      padding-top: var(--header-height);
+      text-align: center;
+      animation: fadeIn 1s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      font-family: 'Montserrat', sans-serif;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 0 auto 2rem;
+    }
+    .hero .btn {
+      padding: 0.8rem 2rem;
+      font-size: 1rem;
+      background: var(--accent-color);
+      color: #fff;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: background var(--transition-speed);
+    }
+    .hero .btn:hover {
+      background: #0288d1;
+    }
+
+    /* Main Content */
+    main {
+      max-width: 1000px;
       margin: 0 auto;
+      padding: 2rem;
     }
     section {
-      margin-bottom: 2rem;
+      margin-bottom: 4rem;
       background-color: var(--secondary-bg);
-      padding: 1.5rem;
-      border-radius: 8px;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+      scroll-margin-top: var(--header-height);
     }
     section h2 {
       font-size: 2rem;
       margin-bottom: 1rem;
+      border-bottom: 2px solid var(--accent-color);
+      display: inline-block;
+      padding-bottom: 0.3rem;
     }
-    .social a {
-      color: var(--text-color);
-      margin: 0 10px;
-      font-size: 2rem;
-      transition: color 0.3s ease;
-      text-decoration: none;
+    section p {
+      font-size: 1rem;
+      line-height: 1.8;
     }
-    .social a:hover {
+
+    /* Social Icons */
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      margin-top: 1rem;
+    }
+    .social-icons a {
+      color: #e0e0e0;
+      font-size: 1.8rem;
+      margin: 0 1rem;
+      transition: transform var(--transition-speed), color var(--transition-speed);
+    }
+    .social-icons a:hover {
+      transform: scale(1.1);
       color: var(--accent-color);
     }
+
+    /* Footer */
     footer {
       text-align: center;
-      padding: 1rem;
+      padding: 1.5rem;
       background-color: var(--secondary-bg);
-      border-radius: 8px;
-      margin-top: 2rem;
+      color: #a0a0a0;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      header {
+        padding: 0 1rem;
+      }
+      .nav-links {
+        position: absolute;
+        top: var(--header-height);
+        left: 0;
+        width: 100%;
+        background: var(--secondary-bg);
+        flex-direction: column;
+        align-items: center;
+        display: none;
+      }
+      .nav-links li {
+        margin: 1rem 0;
+      }
+      .hamburger {
+        display: block;
+      }
+      .nav-active {
+        display: flex;
+      }
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      .hero p {
+        font-size: 1rem;
+        padding: 0 1rem;
+      }
+      section h2 {
+        font-size: 1.8rem;
+      }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Francesco Gallo</h1>
+    <div class="logo">Ender 🖥️</div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#social">Social</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="hamburger" onclick="toggleNav()">
+        <i class="fas fa-bars"></i>
+      </div>
+    </nav>
   </header>
-  <div class="container">
-    <section class="about">
-      <h2>Chi Sono</h2>
-      <p>Prova testo</p>
-    </section>
-    <section class="social">
-      <h2>Seguimi</h2>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div>
+      <h1>Francesco Gallo</h1>
+      <p>A passionate developer, designer, and lifelong learner dedicated to creating beautiful digital experiences.</p>
+      <button class="btn" onclick="document.getElementById('about').scrollIntoView({ behavior: 'smooth' });">Learn More</button>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main>
+    <!-- About Section -->
+    <section id="about">
+      <h2>About Me</h2>
       <p>
-        <a href="https://github.com/GalloFrancesco04" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-        <a href="https://instagram.com/gallofrancesco_04" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="https://linkedin.com/in/tuo_username" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        Just a nerd interested in IT//Ai//Literature//Whatever can stimulate my brain.
+      </p>
+      <p>
+        Currently studying Computer Science at the University of Parma.
       </p>
     </section>
-  </div>
+
+    <!-- Social Section -->
+    <section id="social">
+      <h2>Social</h2>
+      <div class="social-icons">
+        <a href="https://github.com/GalloFrancesco04" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://instagram.com/gallofrancesco_04" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://linkedin.com/in/your_username" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <h2>Contact</h2>
+      <p><a href="mailto:gallofrancesco723@gmail.com">gallofrancesco723@gmail.com</a></p>
+    </section>
+  </main>
+
+  <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Francesco Gallo. Tutti i diritti riservati.</p>
+    <p>&copy; 2025 Francesco Gallo. All rights reserved.</p>
   </footer>
+
+  <!-- JavaScript for Mobile Navigation -->
+  <script>
+    function toggleNav() {
+      const navLinks = document.querySelector('.nav-links');
+      navLinks.classList.toggle('nav-active');
+    }
+  </script>
 </body>
 </html>
